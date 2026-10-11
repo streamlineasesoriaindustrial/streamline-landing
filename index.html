@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Streamline Asesoría Industrial | Consultoría y optimización de procesos</title>
+<meta name="description" content="Asesoría industrial para plantas que quieren producir más con lo que ya tienen. Diagnóstico de procesos, optimización, indicadores y normas. Primera reunión sin costo.">
+<meta name="theme-color" content="#062d50">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Streamline Asesoría Industrial">
+<meta property="og:description" content="Tu planta puede producir más con lo que ya tiene. Agendá una reunión sin costo.">
+<!-- REEMPLAZAR TU-USUARIO y el nombre del repositorio por los reales -->
+<meta property="og:image" content="https://TU-USUARIO.github.io/streamline-landing/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+html { -webkit-text-size-adjust: 100%; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: cabecera fija, hero en dos columnas (promesa + mapa de pérdidas), bandas alternas, cierre con WhatsApp.
+   Diseño técnico y sobrio: grises fríos, azul marino, un solo acento naranja de seguridad industrial. */
+/* Paleta tomada del logo: azul marino del engranaje y del nombre, naranja de la flecha y gris del subtítulo. */
+:root {
+  color-scheme: light;
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --band: #e8edf2;
+  --fg: #0b2540;
+  --muted: #565e66;
+  --line: #d5dce4;
+  --navy: #062d50;
+  --accent: #d4530a;
+  --on-accent: #ffffff;
+  --accent-soft: #fde5d6;
+  --silver: #b4bec9;
+  --result-bg: #062d50;
+  --result-fg: #f4f6f8;
+  --result-btn-bg: #ff6a13;
+  --result-btn-fg: #062d50;
+  --result-bar: #ff6a13;
+  --logo-bg: transparent;
+  --font-display: "Montserrat", "Segoe UI", sans-serif;
+  --font-body: "Nunito Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Nunito Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #08182a; --surface: #0f2339; --band: #0b1d31; --fg: #e8eef5; --muted: #a3afbd;
+    --line: #21384f; --navy: #9cbbdd; --accent: #ff7a2f; --on-accent: #1a0a00; --accent-soft: #3a2012;
+    --silver: #35506b; --result-bg: #0f2f52; --result-fg: #eaf1f8; --result-btn-bg: #ff6a13; --result-btn-fg: #062d50; --result-bar: #ff6a13;
+    --logo-bg: #f0f3f6;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #08182a; --surface: #0f2339; --band: #0b1d31; --fg: #e8eef5; --muted: #a3afbd;
+  --line: #21384f; --navy: #9cbbdd; --accent: #ff7a2f; --on-accent: #1a0a00; --accent-soft: #3a2012;
+  --silver: #35506b; --result-bg: #0f2f52; --result-fg: #eaf1f8; --result-btn-bg: #ff6a13; --result-btn-fg: #062d50; --result-bar: #ff6a13;
+  --logo-bg: #f0f3f6;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 17px; line-height: 1.6; margin: 0; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.18; margin: 0; text-wrap: balance; letter-spacing: -0.015em; }
+h1 { font-size: clamp(2.1rem, 5.6vw, 3.5rem); line-height: 1.12; }
+h2 { font-size: clamp(1.7rem, 3.8vw, 2.4rem); }
+h3 { font-size: 1.2rem; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.wrap { width: 100%; max-width: 1120px; margin-inline: auto; padding-inline: 20px; }
+section { padding-block: clamp(56px, 9vw, 96px); }
+.band { background: var(--band); }
+.eyebrow { font-family: var(--font-display); font-weight: 600; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--accent); margin-bottom: 14px; }
+.lead { color: var(--muted); max-width: 62ch; font-size: 1.1rem; }
+.sec-head { display: grid; gap: 14px; margin-bottom: 40px; max-width: 760px; }
+
+/* Cabecera */
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 8px; }
+.brand { display: block; line-height: 0; text-decoration: none; background: var(--logo-bg); padding: 4px 8px; border-radius: 8px; }
+.brand img { height: 66px; width: auto; max-width: 100%; display: block; }
+nav.links { display: flex; gap: 26px; font-size: 0.95rem; }
+nav.links a { text-decoration: none; color: var(--muted); }
+nav.links a:hover { color: var(--fg); }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--accent); color: var(--on-accent); font-weight: 700; font-family: var(--font-display); letter-spacing: 0; font-size: 1rem; padding: 14px 24px; border: 0; border-radius: 8px; text-decoration: none; cursor: pointer; }
+.btn:hover { filter: brightness(1.08); }
+.btn.small { padding: 10px 16px; font-size: 0.92rem; }
+.btn.ghost { background: transparent; color: var(--fg); border: 1.5px solid var(--fg); }
+@media (max-width: 760px) { nav.links { display: none; } .brand img { height: 52px; } }
+
+/* Hero */
+.hero { padding-block: clamp(40px, 7vw, 80px); }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; }
+.hero-grid > * { min-width: 0; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero .lead { margin-top: 22px; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+.hero-note { margin-top: 18px; font-size: 0.9rem; color: var(--muted); font-family: var(--font-mono); }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; gap: 36px; } }
+
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 24px; box-shadow: 0 1px 0 var(--line); }
+.panel-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; margin-bottom: 18px; }
+.panel-head h3 { font-size: 1.15rem; }
+.tag { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); border: 1px solid var(--line); padding: 3px 8px; border-radius: 3px; }
+.bars { display: grid; gap: 14px; }
+.bar-row { display: grid; gap: 6px; }
+.bar-label { display: flex; justify-content: space-between; gap: 12px; font-size: 0.92rem; }
+.bar-label b { font-family: var(--font-mono); font-weight: 500; font-variant-numeric: tabular-nums; }
+.bar-track { height: 12px; background: var(--band); border-radius: 2px; overflow: hidden; }
+.bar-fill { height: 100%; background: var(--silver); }
+.bar-row.top .bar-fill { background: var(--accent); }
+.panel-foot { margin-top: 18px; font-size: 0.85rem; color: var(--muted); }
+
+/* Problemas */
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.grid-3 > *, .grid-2 > *, .grid-4 > * { min-width: 0; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+@media (max-width: 900px) { .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid-3, .grid-4, .grid-2 { grid-template-columns: 1fr; } }
+.pain { border-top: 3px solid var(--navy); padding-top: 16px; display: grid; gap: 8px; }
+.pain h3 { font-size: 1.1rem; }
+.pain p { color: var(--muted); font-size: 0.97rem; }
+
+/* Servicios */
+.service { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 26px; display: grid; gap: 10px; align-content: start; }
+.service .ico { width: 40px; height: 40px; color: var(--accent); }
+.service p { color: var(--muted); font-size: 0.97rem; }
+.service ul { margin: 6px 0 0; padding-left: 18px; color: var(--muted); font-size: 0.93rem; display: grid; gap: 4px; }
+
+/* Método */
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 6px; background: var(--surface); overflow: hidden; }
+.steps > * { min-width: 0; }
+.step { padding: 22px 18px; border-right: 1px solid var(--line); display: grid; gap: 8px; align-content: start; }
+.step:last-child { border-right: 0; }
+.step .n { font-family: var(--font-mono); font-size: 0.78rem; color: var(--accent); letter-spacing: 0.1em; }
+.step h3 { font-size: 1.05rem; }
+.step p { font-size: 0.9rem; color: var(--muted); }
+.step .out { font-family: var(--font-mono); font-size: 0.74rem; color: var(--fg); background: var(--band); padding: 6px 8px; border-radius: 3px; }
+@media (max-width: 960px) { .steps { grid-template-columns: 1fr; } .step { border-right: 0; border-bottom: 1px solid var(--line); } .step:last-child { border-bottom: 0; } }
+
+/* Calculadora */
+.calc { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: stretch; }
+.calc > * { min-width: 0; }
+@media (max-width: 860px) { .calc { grid-template-columns: 1fr; } }
+.field { display: grid; gap: 6px; margin-bottom: 18px; }
+.field label { font-size: 0.92rem; font-weight: 500; }
+.field input, .field select { font: inherit; font-family: var(--font-mono); background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 4px; padding: 12px 14px; width: 100%; }
+.field small { color: var(--muted); font-size: 0.82rem; }
+.result { background: var(--result-bg); color: var(--result-fg); border-radius: 6px; padding: 28px; display: grid; gap: 18px; align-content: center; }
+.result .big { font-family: var(--font-display); font-weight: 600; font-size: clamp(1.5rem, 2.7vw, 2.05rem); line-height: 1.1; font-variant-numeric: tabular-nums; white-space: nowrap; margin-top: 6px; }
+.result .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.result .pair > * { min-width: 0; }
+@media (max-width: 480px) { .result .pair { grid-template-columns: 1fr; } }
+.result .btn, .closing .btn { background: var(--result-btn-bg); color: var(--result-btn-fg); }
+.mbars { display: grid; grid-template-columns: repeat(12, 1fr); gap: 5px; align-items: end; height: 110px; margin-top: 10px; }
+.mbars div { background: var(--result-bar); border-radius: 2px 2px 0 0; min-height: 3px; }
+.mbars-lbl { display: grid; grid-template-columns: repeat(12, 1fr); gap: 5px; font-size: 0.68rem; opacity: 0.85; text-align: center; margin-top: 4px; }
+.result .lbl { font-family: var(--font-mono); font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.1em; opacity: 0.85; }
+.result .sub { font-size: 0.85rem; opacity: 0.85; }
+
+/* Sectores y FAQ */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { border: 1px solid var(--line); background: var(--surface); padding: 8px 14px; border-radius: 999px; font-size: 0.95rem; }
+details { border-top: 1px solid var(--line); padding-block: 18px; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-weight: 600; font-size: 1.05rem; list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; font-family: var(--font-mono); color: var(--accent); }
+details[open] summary::after { content: "–"; }
+details p { margin-top: 10px; color: var(--muted); max-width: 70ch; }
+
+/* Cierre */
+.closing { background: var(--result-bg); color: var(--result-fg); }
+.closing .wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+.closing .wrap > * { min-width: 0; }
+@media (max-width: 800px) { .closing .wrap { grid-template-columns: 1fr; } }
+.closing p { opacity: 0.9; max-width: 56ch; margin-top: 14px; }
+.contact { display: grid; gap: 12px; font-family: var(--font-mono); font-size: 0.92rem; }
+.contact span { display: block; opacity: 0.8; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.1em; }
+.contact .row { border-top: 1px solid currentColor; border-color: color-mix(in srgb, currentColor 30%, transparent); padding-top: 10px; user-select: all; overflow-wrap: anywhere; }
+.foot-brand { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.foot-brand img { height: 84px; width: auto; background: var(--logo-bg); padding: 4px 8px; border-radius: 8px; }
+footer { padding-block: 28px; color: var(--muted); font-size: 0.85rem; }
+footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Streamline Asesoría Industrial"><img alt="Streamline Asesoría Industrial" src="assets/logo.png"></a>
+    <nav class="links" aria-label="Principal">
+      <a href="#problemas">Pérdidas</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#metodo">Método</a>
+      <a href="#calculadora">Calculadora</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <a class="btn small" href="https://wa.me/5493510000000?text=Hola%2C%20quiero%20coordinar%20un%20diagn%C3%B3stico%20para%20mi%20planta" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Consultoría industrial · Mejora de procesos</p>
+      <h1>Tu planta puede producir más con <em>lo que ya tiene</em>.</h1>
+      <p class="lead">Medimos dónde se pierde tiempo, material y plata en tu proceso, y te dejamos un plan con prioridades y ahorro estimado. Trabajamos con ingenieros que pisan planta, no con presentaciones genéricas.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://wa.me/5493510000000?text=Hola%2C%20quiero%20coordinar%20un%20diagn%C3%B3stico%20para%20mi%20planta" target="_blank" rel="noopener">Agendar reunión por WhatsApp</a>
+        <a class="btn ghost" href="#metodo">Ver cómo trabajamos</a>
+      </div>
+      <p class="hero-note">Primera reunión sin costo · Respuesta en el día hábil</p>
+    </div>
+    <div class="panel" aria-label="Ejemplo de mapa de pérdidas">
+      <div class="panel-head">
+        <h3>Mapa de pérdidas</h3>
+        <span class="tag">Ejemplo ilustrativo</span>
+      </div>
+      <div class="bars">
+        <div class="bar-row top"><div class="bar-label"><span>Paradas no planificadas</span><b>31%</b></div><div class="bar-track"><div class="bar-fill" style="width:31%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span>Mermas de material</span><b>24%</b></div><div class="bar-track"><div class="bar-fill" style="width:24%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span>Reprocesos y rechazos</span><b>18%</b></div><div class="bar-track"><div class="bar-fill" style="width:18%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span>Esperas y cuellos de botella</span><b>15%</b></div><div class="bar-track"><div class="bar-fill" style="width:15%"></div></div></div>
+        <div class="bar-row"><div class="bar-label"><span>Cambios de formato</span><b>12%</b></div><div class="bar-track"><div class="bar-fill" style="width:12%"></div></div></div>
+      </div>
+      <p class="panel-foot">Así ordenamos tu planta después del diagnóstico: primero lo que más pesa, con un responsable y una fecha para cada acción.</p>
+    </div>
+  </div>
+</section>
+
+<section id="problemas" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Dónde se pierde la eficiencia</p>
+      <h2>Los mismos cinco problemas aparecen en casi todas las plantas</h2>
+      <p class="lead">Si reconocés alguno, hay margen de mejora que hoy no estás midiendo.</p>
+    </div>
+    <div class="grid-3">
+      <div class="pain"><h3>Mermas que se dan por normales</h3><p>Material que se corta, se descarta o sobra en cada lote y nadie tiene cuantificado. Con un proceso mejor diseñado, esa pérdida baja.</p></div>
+      <div class="pain"><h3>Paradas sin causa registrada</h3><p>La línea frena y se retoma, pero no queda dato de por qué. Sin registro no se puede priorizar qué arreglar primero.</p></div>
+      <div class="pain"><h3>Cuellos de botella</h3><p>Una etapa limita a toda la planta mientras otras esperan. Se resuelve balanceando el flujo, no siempre comprando equipos.</p></div>
+      <div class="pain"><h3>Reprocesos y rechazos</h3><p>Producto que vuelve a empezar o termina como descarte. Cada rechazo consume materia prima, horas y energía dos veces.</p></div>
+      <div class="pain"><h3>Decisiones sin datos</h3><p>Los indicadores están en planillas dispersas o en la memoria de un operario. Faltan números confiables para decidir.</p></div>
+      <div class="pain"><h3>Cambios de formato lentos</h3><p>Los tiempos de preparación se comen horas productivas. Estandarizarlos libera capacidad sin sumar turnos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Servicios</p>
+      <h2>Cuatro formas de trabajar con tu planta</h2>
+      <p class="lead">Podés contratar una sola o armar un proyecto integral. Empezamos siempre por un diagnóstico.</p>
+    </div>
+    <div class="grid-2">
+      <div class="service">
+        <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="17" cy="17" r="10"/><path d="M25 25 L35 35"/><path d="M12 18 L16 14 L20 19"/></svg>
+        <h3>Diagnóstico de procesos</h3>
+        <p>Relevamiento en planta, balance de materia y de tiempos, y mapa de pérdidas con ahorro estimado.</p>
+        <ul><li>Mapeo de flujo de valor</li><li>Medición de OEE y rendimiento</li><li>Informe con prioridades</li></ul>
+      </div>
+      <div class="service">
+        <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="30" height="24" rx="2"/><path d="M5 16 H35"/><path d="M13 8 V16 M22 16 V32"/></svg>
+        <h3>Optimización de procesos</h3>
+        <p>Rediseñamos las etapas de tu proceso para producir más con los mismos recursos, con menos desperdicio y menos tiempos muertos.</p>
+        <ul><li>Balanceo de líneas y flujo</li><li>Reducción de desperdicios</li><li>Estandarización de operaciones</li></ul>
+      </div>
+      <div class="service">
+        <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 32 V8"/><path d="M6 32 H34"/><path d="M11 26 L18 18 L23 22 L32 11"/></svg>
+        <h3>Indicadores y digitalización</h3>
+        <p>Tableros simples con los datos que importan, cargados desde planta, para decidir con números.</p>
+        <ul><li>Tableros de producción</li><li>Registro de paradas y causas</li><li>Capacitación del equipo</li></ul>
+      </div>
+      <div class="service">
+        <svg class="ico" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 5 L33 12 V24 C33 30 27 34 20 36 C13 34 7 30 7 24 V12 Z"/><path d="M14 20 L19 25 L27 15"/></svg>
+        <h3>Normas, auditorías y seguridad</h3>
+        <p>Implementación de sistemas de gestión, preparación para auditorías y mejora de condiciones de trabajo.</p>
+        <ul><li>Procedimientos documentados</li><li>Higiene y seguridad</li><li>Acompañamiento en auditorías</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="metodo" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Método</p>
+      <h2>De la primera reunión al informe final, en cinco etapas</h2>
+      <p class="lead">Cada etapa termina con un entregable que podés revisar y aprobar antes de pasar a la siguiente.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">ETAPA 1</span><h3>Reunión inicial</h3><p>Alineamos objetivos, alcance, plazos y quién del equipo participa.</p><span class="out">Entrega: alcance acordado</span></div>
+      <div class="step"><span class="n">ETAPA 2</span><h3>Diagnóstico</h3><p>Relevamos la planta, medimos y encontramos las causas de cada pérdida.</p><span class="out">Entrega: mapa de pérdidas</span></div>
+      <div class="step"><span class="n">ETAPA 3</span><h3>Plan de acción</h3><p>Evaluamos alternativas y las ordenamos por impacto, costo y facilidad.</p><span class="out">Entrega: plan priorizado</span></div>
+      <div class="step"><span class="n">ETAPA 4</span><h3>Implementación</h3><p>Probamos las mejoras en una línea o lote piloto antes de extenderlas.</p><span class="out">Entrega: prueba piloto</span></div>
+      <div class="step"><span class="n">ETAPA 5</span><h3>Cierre y control</h3><p>Medimos el resultado, documentamos todo y dejamos indicadores de seguimiento.</p><span class="out">Entrega: informe final</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="calculadora">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Calculadora de ahorro</p>
+      <h2>Cuánto vale mejorar solo un 1% por mes</h2>
+      <p class="lead">Una mejora chica y sostenida se vuelve un número grande al cabo del año. Cargá tu producción mensual y mirá cómo se acumula.</p>
+    </div>
+    <div class="calc">
+      <form class="panel" id="calc-form" onsubmit="return false">
+        <div class="field">
+          <label for="prod">Producción mensual ($)</label>
+          <input id="prod" type="number" inputmode="numeric" min="0" step="1000000" value="30000000">
+          <small>Valor de lo que produce la planta por mes.</small>
+        </div>
+        <div class="field">
+          <label for="pct">Optimización lograda (%)</label>
+          <input id="pct" type="number" inputmode="decimal" min="0" max="20" step="0.5" value="1">
+          <small>Por defecto, 1% de la producción mensual.</small>
+        </div>
+        <div class="field">
+          <label for="modo">Cómo se comporta la mejora</label>
+          <select id="modo">
+            <option value="const" selected>Constante: ahorro igual todos los meses</option>
+            <option value="acum">Acumulativa: cada mes se suma otro punto de mejora</option>
+          </select>
+        </div>
+      </form>
+      <div class="result" aria-live="polite">
+        <div class="pair">
+          <div><div class="lbl">Ahorro del primer mes</div><div class="big" id="mensual">–</div></div>
+          <div><div class="lbl">Ahorro en 12 meses</div><div class="big" id="anual">–</div></div>
+        </div>
+        <div>
+          <div class="lbl">Ahorro por mes durante el año</div>
+          <div class="mbars" id="mbars" role="img" aria-label="Ahorro mensual de enero a diciembre"></div>
+        </div>
+        <p class="sub" id="nota">–</p>
+        <a class="btn" href="https://wa.me/5493510000000?text=Hola%2C%20hice%20la%20estimaci%C3%B3n%20de%20ahorro%20y%20quiero%20validarla%20en%20mi%20planta" target="_blank" rel="noopener">Validar este número en mi planta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Industrias</p>
+      <h2>Procesos distintos, el mismo enfoque de medir primero</h2>
+    </div>
+    <div class="chips">
+      <span class="chip">Alimentos y bebidas</span><span class="chip">Química y petroquímica</span><span class="chip">Vidrio y laminados</span><span class="chip">Plásticos y envases</span><span class="chip">Metalmecánica</span><span class="chip">Papel y cartón</span><span class="chip">Textil</span><span class="chip">Autopartes</span>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap" style="max-width:820px">
+    <div class="sec-head">
+      <p class="eyebrow">Preguntas frecuentes</p>
+      <h2>Lo que suelen preguntar antes de empezar</h2>
+    </div>
+    <details open><summary>¿Cuánto dura un diagnóstico?</summary><p>Depende del tamaño de la planta y de cuántas líneas se relevan. En general va de dos a seis semanas desde la reunión inicial hasta el informe. Lo definimos por escrito en la primera etapa.</p></details>
+    <details><summary>¿Tengo que parar la producción?</summary><p>No. Relevamos con la planta funcionando y coordinamos con producción para no interferir con los turnos. Las pruebas piloto se programan con vos.</p></details>
+    <details><summary>¿Qué necesitan de mi equipo?</summary><p>Un referente que conozca el proceso, acceso a los datos de producción que existan y algo de tiempo de los operarios para entrevistas cortas. Si los datos son escasos, los generamos juntos.</p></details>
+    <details><summary>¿Trabajan en el interior del país?</summary><p>Sí. Hacemos visitas a planta y el seguimiento a distancia. Coordinamos los viajes en la primera reunión.</p></details>
+    <details><summary>¿Cómo sé si el proyecto valió la pena?</summary><p>Fijamos indicadores de partida antes de intervenir y los medimos de nuevo al cierre. El informe final compara ambos números.</p></details>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <div>
+      <h2>Contanos cómo funciona tu planta hoy</h2>
+      <p>Escribinos por WhatsApp con tu rubro y el problema que más te preocupa. Te respondemos para coordinar una primera reunión sin costo.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://wa.me/5493510000000?text=Hola%2C%20quiero%20coordinar%20un%20diagn%C3%B3stico%20para%20mi%20planta" target="_blank" rel="noopener">Agendar reunión por WhatsApp</a>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="row"><span>WhatsApp</span>+54 9 351 000-0000</div>
+      <div class="row"><span>Correo</span>contacto@streamline.com.ar</div>
+      <div class="row"><span>Base</span>Córdoba, Argentina</div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="foot-brand"><img alt="Streamline Asesoría Industrial" src="assets/logo.png"><span>© 2026 Streamline Asesoría Industrial</span></span>
+    <span>Córdoba, Argentina</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var prod = document.getElementById('prod');
+  var pct = document.getElementById('pct');
+  var modo = document.getElementById('modo');
+  var mensual = document.getElementById('mensual');
+  var anual = document.getElementById('anual');
+  var nota = document.getElementById('nota');
+  var bars = document.getElementById('mbars');
+  var fmt = new Intl.NumberFormat('es-AR', { maximumFractionDigits: 0 });
+  var meses = ['E','F','M','A','M','J','J','A','S','O','N','D'];
+  function calc() {
+    var p = parseFloat(prod.value) || 0;
+    var r = (parseFloat(pct.value) || 0) / 100;
+    var acum = modo.value === 'acum';
+    var vals = [], total = 0, i, v;
+    for (i = 1; i <= 12; i++) { v = p * r * (acum ? i : 1); vals.push(v); total += v; }
+    mensual.textContent = '$ ' + fmt.format(vals[0]);
+    anual.textContent = '$ ' + fmt.format(total);
+    var max = Math.max.apply(null, vals) || 1;
+    bars.innerHTML = '';
+    vals.forEach(function (x, idx) {
+      var d = document.createElement('div');
+      d.style.height = Math.max(3, Math.round(x / max * 100)) + '%';
+      d.title = 'Mes ' + (idx + 1) + ': $ ' + fmt.format(x);
+      bars.appendChild(d);
+    });
+    var lb = bars.nextElementSibling;
+    if (!lb || !lb.classList.contains('mbars-lbl')) {
+      lb = document.createElement('div'); lb.className = 'mbars-lbl';
+      lb.innerHTML = meses.map(function (m) { return '<span>' + m + '</span>'; }).join('');
+      bars.parentNode.appendChild(lb);
+    }
+    nota.textContent = acum
+      ? 'Cada mes se suma otro ' + (r * 100).toLocaleString('es-AR') + '% de mejora: en diciembre el ahorro mensual llega a $ ' + fmt.format(vals[11]) + '.'
+      : 'Un ' + (r * 100).toLocaleString('es-AR') + '% de $ ' + fmt.format(p) + ' son $ ' + fmt.format(vals[0]) + ' por mes, multiplicado por 12 meses. Es una estimación, no una promesa de resultado.';
+  }
+  [prod, pct, modo].forEach(function (el) { el.addEventListener('input', calc); el.addEventListener('change', calc); });
+  calc();
+})();
+</script>
+</body>
+</html>
