@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Streamline Asesoría Industrial | Consultoría y optimización de procesos</title>
+<meta name="description" content="Asesoría industrial para plantas que quieren producir más con lo que ya tienen. Diagnóstico de procesos, optimización, indicadores y normas. Primera reunión sin costo.">
+<meta name="theme-color" content="#062d50">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="Streamline Asesoría Industrial">
+<meta property="og:description" content="Tu planta puede producir más con lo que ya tiene. Agendá una reunión sin costo.">
+<meta property="og:image" content="https://streamlineasesoriaindustrial.github.io/streamline-landing/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Nunito+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Composición: cabecera y portada en azul marino con engranaje de fondo y gráfico de cascada,
+   cuerpo claro con ilustraciones propias, método en banda oscura, cierre azul.
+   Paleta del logo: azul marino #062d50, naranja #ff6a13, gris pizarra. */
+:root {
+  color-scheme: light;
+  --bg: #f3f6f9;
+  --surface: #ffffff;
+  --band: #e6edf4;
+  --fg: #0b2540;
+  --muted: #475a6e;
+  --line: #d3dce6;
+  --orange: #ff6a13;
+  --orange-ink: #b84a05;
+  --on-orange: #062d50;
+  --navy: #062d50;
+  --navy-2: #0b3d6b;
+  --on-navy: #ffffff;
+  --on-navy-muted: #b9c8d9;
+  --navy-line: rgba(255,255,255,.14);
+  --il-bg: #e1eaf3;
+  --il-fill: #9db6cf;
+  --il-stroke: #0b3d6b;
+  --font-display: "Montserrat", "Segoe UI", sans-serif;
+  --font-body: "Nunito Sans", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #07162a; --surface: #0e2640; --band: #0a1d33; --fg: #e8eef5; --muted: #9db0c4; --line: #1f3a58;
+    --orange-ink: #ff8a4a; --navy: #04213d; --navy-2: #0b3d6b;
+    --il-bg: #12304f; --il-fill: #35597f; --il-stroke: #9fc2e6;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #07162a; --surface: #0e2640; --band: #0a1d33; --fg: #e8eef5; --muted: #9db0c4; --line: #1f3a58;
+  --orange-ink: #ff8a4a; --navy: #04213d; --navy-2: #0b3d6b;
+  --il-bg: #12304f; --il-fill: #35597f; --il-stroke: #9fc2e6;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 17px; line-height: 1.6; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; text-wrap: balance; letter-spacing: -0.02em; }
+h1 { font-weight: 800; font-size: clamp(2.3rem, 5.8vw, 4rem); line-height: 1.06; }
+h2 { font-weight: 700; font-size: clamp(1.8rem, 3.8vw, 2.6rem); line-height: 1.12; }
+h3 { font-weight: 700; font-size: 1.15rem; line-height: 1.25; letter-spacing: -0.01em; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+.wrap { width: 100%; max-width: 1160px; margin-inline: auto; padding-inline: 20px; }
+section { padding-block: clamp(60px, 9vw, 104px); }
+.eyebrow { font-family: var(--font-display); font-weight: 700; font-size: .74rem; text-transform: uppercase; letter-spacing: .16em; color: var(--orange-ink); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+.eyebrow::before { content: ""; width: 28px; height: 3px; background: var(--orange); border-radius: 2px; }
+.lead { color: var(--muted); max-width: 60ch; font-size: 1.1rem; }
+.sec-head { display: grid; gap: 14px; margin-bottom: 44px; max-width: 760px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--orange); color: var(--on-orange); font-family: var(--font-display); font-weight: 700; font-size: .98rem; padding: 15px 26px; border: 0; border-radius: 10px; text-decoration: none; cursor: pointer; transition: transform .15s ease, box-shadow .15s ease; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(255,106,19,.32); }
+.btn.small { padding: 10px 16px; font-size: .88rem; }
+.btn.ghost { background: transparent; color: var(--on-navy); border: 1.5px solid rgba(255,255,255,.55); }
+.btn.ghost:hover { box-shadow: none; background: rgba(255,255,255,.08); }
+.btn svg { width: 20px; height: 20px; flex: none; }
+
+/* Cabecera */
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 30; background: var(--navy); border-bottom: 1px solid var(--navy-line); }
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 8px; }
+.brand { display: block; line-height: 0; }
+.brand img { height: 62px; width: auto; display: block; }
+nav.links { display: flex; gap: 28px; font-size: .95rem; font-weight: 600; }
+nav.links a { text-decoration: none; color: var(--on-navy-muted); }
+nav.links a:hover { color: var(--on-navy); }
+@media (max-width: 860px) { nav.links { display: none; } .brand img { height: 52px; } }
+
+/* Portada */
+.hero { position: relative; overflow: hidden; background: radial-gradient(1200px 520px at 85% 0%, var(--navy-2) 0%, transparent 60%), var(--navy); color: var(--on-navy); padding-block: clamp(48px, 8vw, 96px) clamp(64px, 9vw, 110px); }
+.hero::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(var(--navy-line) 1px, transparent 1px), linear-gradient(90deg, var(--navy-line) 1px, transparent 1px); background-size: 56px 56px; opacity: .35; mask-image: linear-gradient(180deg, #000 0%, transparent 85%); -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 85%); pointer-events: none; }
+.bg-gear { position: absolute; color: var(--orange); pointer-events: none; }
+.bg-gear.g1 { width: 640px; height: 640px; right: -190px; bottom: -260px; opacity: .13; animation: spin 140s linear infinite; }
+.bg-gear.g2 { width: 300px; height: 300px; left: -120px; top: 40%; opacity: .07; color: #fff; animation: spin 90s linear infinite reverse; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+.hero-grid > * { min-width: 0; }
+.hero .eyebrow { color: var(--orange); }
+.hero h1 em { font-style: normal; color: var(--orange); }
+.hero .lead { color: var(--on-navy-muted); margin-top: 24px; font-size: 1.15rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; }
+.hero-note { margin-top: 20px; font-size: .92rem; color: var(--on-navy-muted); display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.hero-note span::before { content: ""; display: inline-block; width: 7px; height: 7px; background: var(--orange); border-radius: 50%; margin-right: 8px; vertical-align: 1px; }
+@media (max-width: 920px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; } .bg-gear.g1 { width: 420px; height: 420px; right: -150px; bottom: -150px; } }
+
+/* Cascada de pérdidas */
+.wf { background: rgba(255,255,255,.06); border: 1px solid var(--navy-line); border-radius: 16px; padding: 24px; backdrop-filter: blur(6px); }
+.wf-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.wf-head h2 { font-size: 1.1rem; letter-spacing: -.01em; color: var(--on-navy); }
+.tag { font-family: var(--font-display); font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; padding: 4px 9px; border-radius: 99px; border: 1px solid var(--navy-line); color: var(--on-navy-muted); }
+.wf-rows { display: grid; gap: 11px; }
+.wf-row { display: grid; grid-template-columns: minmax(0, 8.6rem) minmax(0, 1fr) 2.6rem; gap: 12px; align-items: center; font-size: .86rem; color: var(--on-navy-muted); }
+.wf-row b { font-family: var(--font-display); font-weight: 700; text-align: right; color: var(--on-navy); font-variant-numeric: tabular-nums; }
+.wf-row.loss b { color: var(--orange); }
+.wf-track { position: relative; height: 16px; background: rgba(255,255,255,.07); border-radius: 4px; }
+.wf-track i { position: absolute; top: 0; bottom: 0; left: calc(var(--s) * 1%); width: calc(var(--w) * 1%); background: #8fb4dd; border-radius: 4px; transform-origin: left center; animation: grow .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d, 0s); }
+.wf-row.loss .wf-track i { background: var(--orange); }
+.wf-row.real .wf-track i { background: #fff; }
+.wf-row.real { color: var(--on-navy); font-weight: 700; }
+@keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.wf-foot { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--navy-line); font-size: .88rem; color: var(--on-navy-muted); }
+.wf-foot strong { color: var(--orange); }
+
+/* Problemas */
+.line-art { width: 100%; height: auto; display: block; margin-bottom: 48px; color: var(--il-stroke); }
+.line-art .belt { fill: var(--il-fill); }
+.line-art .mach { fill: var(--surface); stroke: var(--il-stroke); stroke-width: 3; }
+.line-art .box { fill: var(--il-fill); stroke: var(--il-stroke); stroke-width: 2; }
+.line-art .drop { fill: var(--orange); }
+.line-art .gearf { fill: var(--il-stroke); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 32px; }
+.grid-3 > *, .grid-2 > *, .steps > * { min-width: 0; }
+@media (max-width: 900px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid-3 { grid-template-columns: 1fr; } }
+.pain { display: grid; gap: 8px; padding-top: 18px; border-top: 2px solid var(--line); position: relative; }
+.pain::before { content: ""; position: absolute; top: -2px; left: 0; width: 44px; height: 2px; background: var(--orange); }
+.pain p { color: var(--muted); font-size: .98rem; }
+
+/* Servicios */
+.band { background: var(--band); }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+@media (max-width: 760px) { .grid-2 { grid-template-columns: 1fr; } }
+.service { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; display: grid; grid-template-rows: auto 1fr; transition: transform .2s ease, box-shadow .2s ease; }
+.service:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(6,45,80,.14); }
+.service .il { background: var(--il-bg); padding: 18px 0 0; display: flex; justify-content: center; border-bottom: 1px solid var(--line); }
+.service .il svg { width: min(100%, 300px); height: auto; display: block; color: var(--il-stroke); }
+.il .f1 { fill: var(--il-fill); } .il .fa { fill: var(--orange); } .il .fs { fill: var(--surface); }
+.il .s1 { stroke: var(--il-stroke); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.il .sa { stroke: var(--orange); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.service .body { padding: 24px 26px 28px; display: grid; gap: 10px; align-content: start; }
+.service p { color: var(--muted); font-size: .97rem; }
+.service ul { margin: 6px 0 0; padding: 0; list-style: none; display: grid; gap: 6px; font-size: .93rem; color: var(--muted); }
+.service li { display: flex; gap: 10px; align-items: baseline; }
+.service li::before { content: ""; flex: none; width: 8px; height: 8px; background: var(--orange); border-radius: 2px; transform: translateY(-1px); }
+
+/* Método */
+.dark { background: var(--navy); color: var(--on-navy); position: relative; overflow: hidden; }
+.dark .eyebrow { color: var(--orange); }
+.dark .lead { color: var(--on-navy-muted); }
+.dark .bg-gear { right: -140px; top: -140px; width: 420px; height: 420px; opacity: .08; animation: spin 160s linear infinite; }
+.dark .wrap { position: relative; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 22px; position: relative; counter-reset: s; }
+.steps::before { content: ""; position: absolute; top: 22px; left: 22px; right: 10%; height: 3px; background: linear-gradient(90deg, var(--orange), rgba(255,106,19,.15)); border-radius: 2px; }
+.step { position: relative; display: grid; gap: 10px; align-content: start; }
+.dot { position: relative; z-index: 1; width: 46px; height: 46px; border-radius: 50%; background: var(--orange); color: var(--on-orange); font-family: var(--font-display); font-weight: 800; display: grid; place-items: center; box-shadow: 0 0 0 6px var(--navy); }
+.step h3 { margin-top: 8px; color: var(--on-navy); }
+.step p { font-size: .92rem; color: var(--on-navy-muted); }
+.out { display: inline-block; justify-self: start; font-size: .76rem; font-weight: 700; padding: 5px 10px; border-radius: 6px; background: rgba(255,255,255,.09); color: var(--on-navy); border: 1px solid var(--navy-line); }
+@media (max-width: 960px) {
+  .steps { grid-template-columns: 1fr; gap: 28px; }
+  .steps::before { top: 22px; bottom: 22px; left: 22px; right: auto; width: 3px; height: auto; background: linear-gradient(180deg, var(--orange), rgba(255,106,19,.15)); }
+  .step { padding-left: 70px; }
+  .dot { position: absolute; left: 0; top: 0; }
+  .step h3 { margin-top: 0; padding-top: 10px; }
+}
+
+/* Calculadora */
+.calc { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: stretch; }
+.calc > * { min-width: 0; }
+@media (max-width: 860px) { .calc { grid-template-columns: 1fr; } }
+.panel { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 28px; }
+.field { display: grid; gap: 6px; margin-bottom: 20px; }
+.field label { font-size: .92rem; font-weight: 700; }
+.field input, .field select { font: inherit; background: var(--bg); color: var(--fg); border: 1.5px solid var(--line); border-radius: 10px; padding: 13px 14px; width: 100%; }
+.field input:focus, .field select:focus { border-color: var(--orange); outline: none; }
+.field small { color: var(--muted); font-size: .82rem; }
+.result { background: var(--navy); color: var(--on-navy); border-radius: 16px; padding: 30px; display: grid; gap: 20px; align-content: center; position: relative; overflow: hidden; }
+.result .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.result .pair > * { min-width: 0; }
+@media (max-width: 480px) { .result .pair { grid-template-columns: 1fr; } }
+.result .lbl { font-family: var(--font-display); font-weight: 700; font-size: .7rem; text-transform: uppercase; letter-spacing: .12em; color: var(--on-navy-muted); }
+.result .big { font-family: var(--font-display); font-weight: 800; font-size: clamp(1.5rem, 2.8vw, 2.1rem); line-height: 1.1; font-variant-numeric: tabular-nums; white-space: nowrap; margin-top: 6px; }
+.result .big.acc { color: var(--orange); }
+.mbars { display: grid; grid-template-columns: repeat(12, 1fr); gap: 5px; align-items: end; height: 110px; margin-top: 10px; }
+.mbars div { background: var(--orange); border-radius: 3px 3px 0 0; min-height: 3px; }
+.mbars-lbl { display: grid; grid-template-columns: repeat(12, 1fr); gap: 5px; font-size: .68rem; color: var(--on-navy-muted); text-align: center; margin-top: 4px; }
+.result .sub { font-size: .85rem; color: var(--on-navy-muted); }
+
+/* Industrias y preguntas */
+.chips { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip { border: 1.5px solid var(--line); background: var(--surface); padding: 10px 18px; border-radius: 99px; font-weight: 600; font-size: .95rem; }
+details { border-top: 1px solid var(--line); padding-block: 20px; }
+details:last-of-type { border-bottom: 1px solid var(--line); }
+summary { cursor: pointer; font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; list-style: none; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--band); color: var(--orange-ink); display: grid; place-items: center; font-weight: 700; }
+details[open] summary::after { content: "–"; background: var(--orange); color: var(--on-orange); }
+details p { margin-top: 12px; color: var(--muted); max-width: 70ch; }
+
+/* Cierre y pie */
+.closing .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 48px; align-items: center; }
+.closing .wrap > * { min-width: 0; }
+@media (max-width: 860px) { .closing .wrap { grid-template-columns: 1fr; } }
+.closing h2 { color: var(--on-navy); }
+.closing p { color: var(--on-navy-muted); max-width: 52ch; margin-top: 16px; }
+.contact { display: grid; gap: 0; background: rgba(255,255,255,.06); border: 1px solid var(--navy-line); border-radius: 16px; overflow: hidden; }
+.contact a, .contact div { display: grid; gap: 2px; padding: 18px 22px; border-top: 1px solid var(--navy-line); text-decoration: none; overflow-wrap: anywhere; }
+.contact > :first-child { border-top: 0; }
+.contact span { font-family: var(--font-display); font-weight: 700; font-size: .68rem; text-transform: uppercase; letter-spacing: .12em; color: var(--on-navy-muted); }
+.contact b { font-weight: 600; font-size: 1.02rem; color: var(--on-navy); }
+.contact a:hover b { color: var(--orange); }
+footer { background: var(--navy); color: var(--on-navy-muted); border-top: 1px solid var(--navy-line); padding-block: 36px; font-size: .88rem; }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+footer img { height: 84px; width: auto; display: block; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs><symbol id="gear" viewBox="-50 -50 100 100"><path fill="currentColor" fill-rule="evenodd" d="M35.36,-6.75 L45.74,-4.90 L45.74,4.90 L35.36,6.75 L32.57,15.33 L39.89,22.92 L34.12,30.85 L24.64,26.24 L17.34,31.55 L18.80,41.98 L9.47,45.01 L4.51,35.72 L-4.51,35.72 L-9.47,45.01 L-18.80,41.98 L-17.34,31.55 L-24.64,26.24 L-34.12,30.85 L-39.89,22.92 L-32.57,15.33 L-35.36,6.75 L-45.74,4.90 L-45.74,-4.90 L-35.36,-6.75 L-32.57,-15.33 L-39.89,-22.92 L-34.12,-30.85 L-24.64,-26.24 L-17.34,-31.55 L-18.80,-41.98 L-9.47,-45.01 L-4.51,-35.72 L4.51,-35.72 L9.47,-45.01 L18.80,-41.98 L17.34,-31.55 L24.64,-26.24 L34.12,-30.85 L39.89,-22.92 L32.57,-15.33 Z M14,0 A14,14 0 1,0 -14,0 A14,14 0 1,0 14,0 Z"/></symbol></defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Streamline Asesoría Industrial, inicio"><img src="assets/logo-light.png" width="114" height="62" alt="Streamline Asesoría Industrial"></a>
+    <nav class="links" aria-label="Principal">
+      <a href="#problemas">Pérdidas</a><a href="#servicios">Servicios</a><a href="#metodo">Método</a><a href="#calculadora">Calculadora</a><a href="#faq">Preguntas</a>
+    </nav>
+    <a class="btn small" href="https://wa.me/5493517899835?text=Hola%2C%20quiero%20coordinar%20un%20diagn%C3%B3stico%20para%20mi%20planta" target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero">
+  <svg class="bg-gear g1" aria-hidden="true"><use href="#gear"/></svg>
+  <svg class="bg-gear g2" aria-hidden="true"><use href="#gear"/></svg>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Asesoría industrial · Córdoba, Argentina</p>
+      <h1>Tu planta puede producir más con <em>lo que ya tiene</em>.</h1>
+      <p class="lead">Medimos dónde se pierde tiempo, material y plata en tu proceso, y te dejamos un plan con prioridades y ahorro estimado. Trabajamos con ingenieros que pisan planta, no con presentaciones genéricas.</p>
+      <div class="cta-row">
+        <a class="btn" href="https://wa.me/5493517899835?text=Hola%2C%20quiero%20coordinar%20un%20diagn%C3%B3stico%20para%20mi%20planta" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2a9.9 9.9 0 0 0-8.5 15l-1.5 5.4 5.5-1.4A9.9 9.9 0 1 0 12.04 2Zm5.7 14c-.24.67-1.4 1.28-1.94 1.33-.5.05-1.12.07-1.8-.11-.41-.12-.94-.3-1.62-.6-2.84-1.22-4.7-4.1-4.84-4.29-.14-.19-1.15-1.53-1.15-2.92 0-1.4.73-2.08 1-2.36.26-.29.57-.36.76-.36l.55.01c.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.14.12.31.02.5-.1.19-.14.31-.29.47l-.43.5c-.14.14-.29.3-.12.58.17.29.74 1.22 1.6 1.98 1.1.98 2.03 1.28 2.32 1.43.29.14.46.12.63-.07.17-.2.72-.84.92-1.13.19-.29.38-.24.64-.14.26.1 1.67.79 1.96.93.29.14.48.22.55.34.07.12.07.7-.17 1.37Z"/></svg>Agendar reunión por WhatsApp</a>
+        <a class="btn ghost" href="#metodo">Ver cómo trabajamos</a>
+      </div>
+      <p class="hero-note"><span>Primera reunión sin costo</span><span>Respuesta en el día hábil</span></p>
+    </div>
+
+    <div class="wf" aria-label="Ejemplo de cascada de pérdidas, de capacidad teórica a producción real">
+      <div class="wf-head"><h2>De la capacidad teórica a lo que producís</h2><span class="tag">Ejemplo ilustrativo</span></div>
+      <div class="wf-rows">
+        <div class="wf-row"><span>Capacidad teórica</span><div class="wf-track"><i style="--s:0;--w:100;--d:.05s"></i></div><b>100</b></div>
+        <div class="wf-row loss"><span>Paradas no planificadas</span><div class="wf-track"><i style="--s:91;--w:9;--d:.2s"></i></div><b>−9</b></div>
+        <div class="wf-row loss"><span>Mermas de material</span><div class="wf-track"><i style="--s:84;--w:7;--d:.3s"></i></div><b>−7</b></div>
+        <div class="wf-row loss"><span>Reprocesos y rechazos</span><div class="wf-track"><i style="--s:79;--w:5;--d:.4s"></i></div><b>−5</b></div>
+        <div class="wf-row loss"><span>Esperas y cuellos</span><div class="wf-track"><i style="--s:75;--w:4;--d:.5s"></i></div><b>−4</b></div>
+        <div class="wf-row loss"><span>Cambios de formato</span><div class="wf-track"><i style="--s:72;--w:3;--d:.6s"></i></div><b>−3</b></div>
+        <div class="wf-row real"><span>Producción real</span><div class="wf-track"><i style="--s:0;--w:72;--d:.7s"></i></div><b>72</b></div>
+      </div>
+      <p class="wf-foot">Esos <strong>28 puntos</strong> son la oportunidad de mejora. El diagnóstico los mide en tu planta y los ordena por impacto.</p>
+    </div>
+  </div>
+</section>
+
+<section id="problemas">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Dónde se pierde la eficiencia</p>
+      <h2>Los mismos seis problemas aparecen en casi todas las plantas</h2>
+      <p class="lead">Si reconocés alguno, hay margen de mejora que hoy no estás midiendo.</p>
+    </div>
+
+    <svg class="line-art" viewBox="0 0 1000 190" role="img" aria-label="Ilustración de una línea de producción con tres etapas y pérdidas de material">
+      <rect class="belt" x="20" y="136" width="960" height="12" rx="6"/>
+      <g fill="var(--il-stroke)"><circle cx="60" cy="158" r="8"/><circle cx="200" cy="158" r="8"/><circle cx="340" cy="158" r="8"/><circle cx="480" cy="158" r="8"/><circle cx="620" cy="158" r="8"/><circle cx="760" cy="158" r="8"/><circle cx="900" cy="158" r="8"/></g>
+      <g>
+        <rect class="mach" x="130" y="34" width="150" height="82" rx="10"/><use class="gearf" href="#gear" x="170" y="42" width="70" height="70" style="color:var(--il-stroke)"/>
+        <rect class="mach" x="425" y="34" width="150" height="82" rx="10"/><use href="#gear" x="465" y="42" width="70" height="70" style="color:var(--orange)"/>
+        <rect class="mach" x="720" y="34" width="150" height="82" rx="10"/><use href="#gear" x="760" y="42" width="70" height="70" style="color:var(--il-stroke)"/>
+      </g>
+      <g>
+        <rect class="box" x="30" y="108" width="28" height="28" rx="3"/><rect class="box" x="70" y="108" width="28" height="28" rx="3"/>
+        <rect class="box" x="330" y="108" width="28" height="28" rx="3"/><rect class="box" x="372" y="108" width="28" height="28" rx="3"/>
+        <rect class="box" x="640" y="108" width="28" height="28" rx="3"/>
+        <rect class="box" x="940" y="108" width="28" height="28" rx="3"/>
+      </g>
+      <g class="drops"><path class="drop" d="M205 168 q-8 14 0 20 q8 -6 0 -20z"/><path class="drop" d="M500 168 q-8 14 0 20 q8 -6 0 -20z"/><path class="drop" d="M520 172 q-6 10 0 15 q6 -5 0 -15z"/><path class="drop" d="M795 168 q-8 14 0 20 q8 -6 0 -20z"/></g>
+    </svg>
+
+    <div class="grid-3">
+      <div class="pain"><h3>Mermas que se dan por normales</h3><p>Material que se descarta o sobra en cada lote y nadie tiene cuantificado. Con un proceso mejor diseñado, esa pérdida baja.</p></div>
+      <div class="pain"><h3>Paradas sin causa registrada</h3><p>La línea frena y se retoma, pero no queda dato de por qué. Sin registro no se puede priorizar qué arreglar primero.</p></div>
+      <div class="pain"><h3>Cuellos de botella</h3><p>Una etapa limita a toda la planta mientras otras esperan. Se resuelve balanceando el flujo, no siempre comprando equipos.</p></div>
+      <div class="pain"><h3>Reprocesos y rechazos</h3><p>Producto que vuelve a empezar o termina como descarte. Cada rechazo consume materia prima, horas y energía dos veces.</p></div>
+      <div class="pain"><h3>Decisiones sin datos</h3><p>Los indicadores están en planillas dispersas o en la memoria de un operario. Faltan números confiables para decidir.</p></div>
+      <div class="pain"><h3>Cambios de formato lentos</h3><p>Los tiempos de preparación se comen horas productivas. Estandarizarlos libera capacidad sin sumar turnos.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="servicios" class="band">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Servicios</p>
+      <h2>Cuatro formas de trabajar con tu planta</h2>
+      <p class="lead">Podés contratar una sola o armar un proyecto integral. Empezamos siempre por un diagnóstico.</p>
+    </div>
+    <div class="grid-2">
+      <article class="service">
+        <div class="il"><svg viewBox="0 0 240 130" aria-hidden="true">
+          <rect class="f1" x="28" y="76" width="24" height="42" rx="3"/><rect class="f1" x="62" y="56" width="24" height="62" rx="3"/><rect class="f1" x="96" y="86" width="24" height="32" rx="3"/><rect class="fa" x="130" y="40" width="24" height="78" rx="3"/>
+          <line class="s1" x1="16" y1="118" x2="176" y2="118"/>
+          <circle class="s1 fs" cx="182" cy="56" r="30"/><circle class="sa" cx="182" cy="56" r="30" style="stroke-width:3"/><line class="s1" x1="204" y1="78" x2="224" y2="102" style="stroke-width:7"/>
+          <polyline class="sa" points="166,62 176,52 186,60 198,44"/>
+        </svg></div>
+        <div class="body"><h3>Diagnóstico de procesos</h3><p>Relevamiento en planta, balance de materia y de tiempos, y mapa de pérdidas con ahorro estimado.</p><ul><li>Mapeo de flujo de valor</li><li>Medición de OEE y rendimiento</li><li>Informe con prioridades</li></ul></div>
+      </article>
+      <article class="service">
+        <div class="il"><svg viewBox="0 0 240 130" aria-hidden="true">
+          <use href="#gear" x="40" y="18" width="100" height="100" style="color:var(--il-fill)"/>
+          <use href="#gear" x="118" y="52" width="66" height="66" style="color:var(--il-stroke)"/>
+          <polyline class="sa" points="150,86 176,60 192,70 222,28"/><polygon points="222,18 232,40 210,36" fill="var(--orange)" stroke="var(--orange)" stroke-width="2" stroke-linejoin="round"/>
+          <line class="s1" x1="16" y1="122" x2="224" y2="122"/>
+        </svg></div>
+        <div class="body"><h3>Optimización de procesos</h3><p>Rediseñamos las etapas de tu proceso para producir más con los mismos recursos, con menos desperdicio y menos tiempos muertos.</p><ul><li>Balanceo de líneas y flujo</li><li>Reducción de desperdicios</li><li>Estandarización de operaciones</li></ul></div>
+      </article>
+      <article class="service">
+        <div class="il"><svg viewBox="0 0 240 130" aria-hidden="true">
+          <rect class="s1 fs" x="26" y="14" width="188" height="104" rx="10"/><line class="s1" x1="26" y1="36" x2="214" y2="36"/>
+          <circle cx="40" cy="25" r="4" fill="var(--orange)"/><circle cx="54" cy="25" r="4" fill="var(--il-fill)"/><circle cx="68" cy="25" r="4" fill="var(--il-fill)"/>
+          <rect class="f1" x="42" y="86" width="14" height="22" rx="2"/><rect class="f1" x="62" y="76" width="14" height="32" rx="2"/><rect class="f1" x="82" y="90" width="14" height="18" rx="2"/>
+          <polyline class="sa" points="112,92 134,76 152,84 176,56 198,62"/><circle cx="198" cy="62" r="5" fill="var(--orange)"/>
+          <line class="s1" x1="112" y1="108" x2="200" y2="108" style="stroke-width:2"/>
+        </svg></div>
+        <div class="body"><h3>Indicadores y digitalización</h3><p>Tableros simples con los datos que importan, cargados desde planta, para decidir con números.</p><ul><li>Tableros de producción</li><li>Registro de paradas y causas</li><li>Capacitación del equipo</li></ul></div>
+      </article>
+      <article class="service">
+        <div class="il"><svg viewBox="0 0 240 130" aria-hidden="true">
+          <path class="s1 fs" d="M120 12 L172 30 V66 C172 94 150 112 120 122 C90 112 68 94 68 66 V30 Z"/>
+          <polyline class="sa" points="96,66 114,84 146,48"/>
+          <rect class="s1 fs" x="18" y="38" width="42" height="56" rx="4"/><line class="s1" x1="26" y1="54" x2="52" y2="54" style="stroke-width:2"/><line class="s1" x1="26" y1="66" x2="52" y2="66" style="stroke-width:2"/><line class="s1" x1="26" y1="78" x2="42" y2="78" style="stroke-width:2"/>
+          <rect class="s1 fs" x="180" y="38" width="42" height="56" rx="4"/><line class="s1" x1="188" y1="54" x2="214" y2="54" style="stroke-width:2"/><line class="s1" x1="188" y1="66" x2="214" y2="66" style="stroke-width:2"/><line class="s1" x1="188" y1="78" x2="204" y2="78" style="stroke-width:2"/>
+        </svg></div>
+        <div class="body"><h3>Normas, auditorías y seguridad</h3><p>Implementación de sistemas de gestión, preparación para auditorías y mejora de condiciones de trabajo.</p><ul><li>Procedimientos documentados</li><li>Higiene y seguridad</li><li>Acompañamiento en auditorías</li></ul></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="metodo" class="dark">
+  <svg class="bg-gear" aria-hidden="true"><use href="#gear"/></svg>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Método</p>
+      <h2>De la primera reunión al informe final, en cinco etapas</h2>
+      <p class="lead">Cada etapa termina con un entregable que podés revisar y aprobar antes de pasar a la siguiente.</p>
+    </div>
+    <ol class="steps">
+      <li class="step"><span class="dot">1</span><h3>Reunión inicial</h3><p>Alineamos objetivos, alcance, plazos y quién del equipo participa.</p><span class="out">Entrega: alcance acordado</span></li>
+      <li class="step"><span class="dot">2</span><h3>Diagnóstico</h3><p>Relevamos la planta, medimos y encontramos las causas de cada pérdida.</p><span class="out">Entrega: mapa de pérdidas</span></li>
+      <li class="step"><span class="dot">3</span><h3>Plan de acción</h3><p>Evaluamos alternativas y las ordenamos por impacto, costo y facilidad.</p><span class="out">Entrega: plan priorizado</span></li>
+      <li class="step"><span class="dot">4</span><h3>Implementación</h3><p>Probamos las mejoras en una línea o lote piloto antes de extenderlas.</p><span class="out">Entrega: prueba piloto</span></li>
+      <li class="step"><span class="dot">5</span><h3>Cierre y control</h3><p>Medimos el resultado, documentamos todo y dejamos indicadores de seguimiento.</p><span class="out">Entrega: informe final</span></li>
+    </ol>
+  </div>
+</section>
+
+<section id="calculadora">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Calculadora de ahorro</p>
+      <h2>Cuánto vale mejorar solo un 1% por mes</h2>
+      <p class="lead">Una mejora chica y sostenida se vuelve un número grande al cabo del año. Cargá tu producción mensual y mirá cómo se acumula.</p>
+    </div>
+    <div class="calc">
+      <form class="panel" id="calc-form" onsubmit="return false">
+        <div class="field"><label for="prod">Producción mensual ($)</label><input id="prod" type="number" inputmode="numeric" min="0" step="1000000" value="30000000"><small>Valor de lo que produce la planta por mes.</small></div>
+        <div class="field"><label for="pct">Optimización lograda (%)</label><input id="pct" type="number" inputmode="decimal" min="0" max="20" step="0.5" value="1"><small>Por defecto, 1% de la producción mensual.</small></div>
+        <div class="field"><label for="modo">Cómo se comporta la mejora</label><select id="modo"><option value="const" selected>Constante: ahorro igual todos los meses</option><option value="acum">Acumulativa: cada mes se suma otro punto de mejora</option></select></div>
+      </form>
+      <div class="result" aria-live="polite">
+        <div class="pair">
+          <div><div class="lbl">Ahorro del primer mes</div><div class="big" id="mensual">–</div></div>
+          <div><div class="lbl">Ahorro en 12 meses</div><div class="big acc" id="anual">–</div></div>
+        </div>
+        <div><div class="lbl">Ahorro por mes durante el año</div><div class="mbars" id="mbars" role="img" aria-label="Ahorro mensual de enero a diciembre"></div></div>
+        <p class="sub" id="nota">–</p>
+        <a class="btn" href="https://wa.me/5493517899835?text=Hola%2C%20hice%20la%20estimaci%C3%B3n%20de%20ahorro%20y%20quiero%20validarla%20en%20mi%20planta" target="_blank" rel="noopener">Validar este número en mi planta</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="sec-head"><p class="eyebrow">Industrias</p><h2>Procesos distintos, el mismo enfoque de medir primero</h2></div>
+    <div class="chips"><span class="chip">Alimentos y bebidas</span><span class="chip">Química y petroquímica</span><span class="chip">Vidrio y laminados</span><span class="chip">Plásticos y envases</span><span class="chip">Metalmecánica</span><span class="chip">Papel y cartón</span><span class="chip">Textil</span><span class="chip">Autopartes</span></div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap" style="max-width:840px">
+    <div class="sec-head"><p class="eyebrow">Preguntas frecuentes</p><h2>Lo que suelen preguntar antes de empezar</h2></div>
+    <details open><summary>¿Cuánto dura un diagnóstico?</summary><p>Depende del tamaño de la planta y de cuántas líneas se relevan. En general va de dos a seis semanas desde la reunión inicial hasta el informe. Lo definimos por escrito en la primera etapa.</p></details>
+    <details><summary>¿Tengo que parar la producción?</summary><p>No. Relevamos con la planta funcionando y coordinamos con producción para no interferir con los turnos. Las pruebas piloto se programan con vos.</p></details>
+    <details><summary>¿Qué necesitan de mi equipo?</summary><p>Un referente que conozca el proceso, acceso a los datos de producción que existan y algo de tiempo de los operarios para entrevistas cortas. Si los datos son escasos, los generamos juntos.</p></details>
+    <details><summary>¿Trabajan en el interior del país?</summary><p>Sí. Hacemos visitas a planta y el seguimiento a distancia. Coordinamos los viajes en la primera reunión.</p></details>
+    <details><summary>¿Cómo sé si el proyecto valió la pena?</summary><p>Fijamos indicadores de partida antes de intervenir y los medimos de nuevo al cierre. El informe final compara ambos números.</p></details>
+  </div>
+</section>
+
+<section class="closing dark">
+  <svg class="bg-gear" aria-hidden="true"><use href="#gear"/></svg>
+  <div class="wrap">
+    <div>
+      <h2>Contanos cómo funciona tu planta hoy</h2>
+      <p>Escribinos por WhatsApp con tu rubro y el problema que más te preocupa. Te respondemos para coordinar una primera reunión sin costo.</p>
+      <div class="cta-row"><a class="btn" href="https://wa.me/5493517899835?text=Hola%2C%20quiero%20coordinar%20un%20diagn%C3%B3stico%20para%20mi%20planta" target="_blank" rel="noopener">Agendar reunión por WhatsApp</a></div>
+    </div>
+    <div class="contact">
+      <a href="https://wa.me/5493517899835" target="_blank" rel="noopener"><span>WhatsApp</span><b>+54 9 351 789-9835</b></a>
+      <a href="mailto:Santiago.gonzalez@streamline-asesoria.com"><span>Correo</span><b>Santiago.gonzalez@streamline-asesoria.com</b></a>
+      <div><span>Base</span><b>Córdoba, Argentina</b></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/logo-light.png" width="154" height="84" alt="Streamline Asesoría Industrial">
+    <span>© 2026 Streamline Asesoría Industrial · Córdoba, Argentina</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var prod = document.getElementById('prod'), pct = document.getElementById('pct'), modo = document.getElementById('modo');
+  var mensual = document.getElementById('mensual'), anual = document.getElementById('anual'), nota = document.getElementById('nota'), bars = document.getElementById('mbars');
+  var fmt = new Intl.NumberFormat('es-AR', { maximumFractionDigits: 0 });
+  var meses = ['E','F','M','A','M','J','J','A','S','O','N','D'];
+  function calc() {
+    var p = parseFloat(prod.value) || 0, r = (parseFloat(pct.value) || 0) / 100, acum = modo.value === 'acum';
+    var vals = [], total = 0, i, v;
+    for (i = 1; i <= 12; i++) { v = p * r * (acum ? i : 1); vals.push(v); total += v; }
+    mensual.textContent = '$ ' + fmt.format(vals[0]);
+    anual.textContent = '$ ' + fmt.format(total);
+    var max = Math.max.apply(null, vals) || 1;
+    bars.innerHTML = '';
+    vals.forEach(function (x, idx) {
+      var d = document.createElement('div');
+      d.style.height = Math.max(3, Math.round(x / max * 100)) + '%';
+      d.title = 'Mes ' + (idx + 1) + ': $ ' + fmt.format(x);
+      bars.appendChild(d);
+    });
+    var lb = bars.nextElementSibling;
+    if (!lb || !lb.classList.contains('mbars-lbl')) {
+      lb = document.createElement('div'); lb.className = 'mbars-lbl';
+      lb.innerHTML = meses.map(function (m) { return '<span>' + m + '</span>'; }).join('');
+      bars.parentNode.appendChild(lb);
+    }
+    nota.textContent = acum
+      ? 'Cada mes se suma otro ' + (r * 100).toLocaleString('es-AR') + '% de mejora: en diciembre el ahorro mensual llega a $ ' + fmt.format(vals[11]) + '.'
+      : 'Un ' + (r * 100).toLocaleString('es-AR') + '% de $ ' + fmt.format(p) + ' son $ ' + fmt.format(vals[0]) + ' por mes, multiplicado por 12 meses. Es una estimación, no una promesa de resultado.';
+  }
+  [prod, pct, modo].forEach(function (el) { el.addEventListener('input', calc); el.addEventListener('change', calc); });
+  calc();
+})();
+</script>
+</body>
+</html>
